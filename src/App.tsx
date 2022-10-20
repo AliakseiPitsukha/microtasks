@@ -3,6 +3,7 @@ import {Header} from "./site/Header/Header";
 import {Body} from "./site/Body/Body";
 import {Footer} from "./site/Footer/Footer";
 import {NewComponent} from "./NewComponent";
+import {Button} from "./components/Button";
 
 function App() {
     const students = [
@@ -18,12 +19,20 @@ function App() {
         {id: 10, name: "Charles", age: 98},
         {id: 11, name: "Christopher", age: 100},
     ]
+    const onClickHandler = (name:string) => {
+        return (
+            console.log(name)
+        )
+    }
     return (
         <>
             <Header titleForHeader={'Header'}/>
             <Body titleForBody={'Body'}/>
             <Footer titleForFooter={'Footer'}/>
             <NewComponent students={students}/>
+            <Button
+                title={'YouTubeSubscriber'}
+                callBack={()=>onClickHandler('Boris')}/>
         </>
     );
 }
