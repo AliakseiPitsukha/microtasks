@@ -4,6 +4,7 @@ import {Body} from "./site/Body/Body";
 import {Footer} from "./site/Footer/Footer";
 import {NewComponent} from "./NewComponent";
 import {Button} from "./components/Button";
+import {Bankomat} from "./components/Bankomat";
 
 function App() {
     const students = [
@@ -19,11 +20,24 @@ function App() {
         {id: 10, name: "Charles", age: 98},
         {id: 11, name: "Christopher", age: 100},
     ]
-    const onClickHandler = (name:string) => {
+    const onClickHandler = (name: string) => {
         return (
             console.log(name)
         )
     }
+
+    const money = [
+        {banknote: 'Dollars', nominal: 100, number: ' a1234567890'},
+        {banknote: 'Dollars', nominal: 50, number: ' z1234567890'},
+        {banknote: 'Rubls', nominal: 100, number: ' w1234567890'},
+        {banknote: 'Dollars', nominal: 100, number: ' e1234567890'},
+        {banknote: 'Dollars', nominal: 50, number: ' c1234567890'},
+        {banknote: 'Rubls', nominal: 100, number: ' r1234567890'},
+        {banknote: 'Dollars', nominal: 50, number: ' x1234567890'},
+        {banknote: 'Rubls', nominal: 50, number: ' v1234567890'},
+    ]
+
+
     return (
         <>
             <Header titleForHeader={'Header'}/>
@@ -32,7 +46,8 @@ function App() {
             <NewComponent students={students}/>
             <Button
                 title={'YouTubeSubscriber'}
-                callBack={()=>onClickHandler('Boris')}/>
+                callBack={() => onClickHandler('Boris')}/>
+            <Bankomat money={money}/>
         </>
     );
 }
